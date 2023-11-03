@@ -11,9 +11,15 @@ import jwt
 # pylint: disable=import-error
 from flask import Flask, jsonify, request, abort
 
+# environment variables
+from dotenv import load_dotenv, dotenv_values
+from os import environ as env
 
-JWT_SECRET = os.environ.get('JWT_SECRET', 'abc123abc1234')
-LOG_LEVEL = os.environ.get('LOG_LEVEL', 'INFO')
+load_dotenv()
+
+
+JWT_SECRET = env["JWT_SECRET"] #os.environ.get('JWT_SECRET', 'abc123abc1234')
+LOG_LEVEL = env["LOG_LEVEL"] #os.environ.get('LOG_LEVEL', 'INFO')
 
 
 def _logger():
