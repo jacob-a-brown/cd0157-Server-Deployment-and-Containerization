@@ -12,14 +12,15 @@ import jwt
 from flask import Flask, jsonify, request, abort
 
 # environment variables
-from dotenv import load_dotenv, dotenv_values
-from os import environ as env
+#from dotenv import load_dotenv, dotenv_values
+#from os import environ as env
 
-load_dotenv()
+#load_dotenv()
 
-
-JWT_SECRET = env["JWT_SECRET"] #os.environ.get('JWT_SECRET', 'abc123abc1234')
-LOG_LEVEL = env["LOG_LEVEL"] #os.environ.get('LOG_LEVEL', 'INFO')
+os.environ.get('JWT_SECRET', 'abc123abc1234')
+os.environ.get('LOG_LEVEL', 'INFO')
+#JWT_SECRET = env["JWT_SECRET"] #
+#LOG_LEVEL = env["LOG_LEVEL"] #
 
 
 def _logger():
